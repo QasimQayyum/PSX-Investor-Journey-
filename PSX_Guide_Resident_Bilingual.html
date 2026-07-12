@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>PSX Investment Journey — Residents in Pakistan | پاکستان میں مقیم افراد</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=Noto+Nastaliq+Urdu:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0E2A22; --paper:#F6F9F7; --green:#0B4F3C; --green-soft:#E6F0EA; --gold:#C99A3D; --gold-soft:#F7EDD8;
+    --line:#D8DED9; --white:#FFFFFF;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{background:var(--paper); color:var(--ink); font-family:'Inter',sans-serif; line-height:1.55; -webkit-font-smoothing:antialiased;}
+  .wrap{max-width:960px; margin:0 auto; padding:24px 24px 80px;}
+
+  /* LANGUAGE TOGGLE */
+  .langbar{
+    position:sticky; top:0; z-index:50; background:var(--paper);
+    display:flex; justify-content:flex-end; gap:8px; padding:14px 0; border-bottom:1px solid var(--line); margin-bottom:32px;
+  }
+  .langbtn{
+    font-family:'Inter',sans-serif; font-size:13px; font-weight:600; padding:7px 16px; border-radius:20px;
+    border:1px solid var(--line); background:var(--white); color:#5A665F; cursor:pointer; transition:.15s;
+  }
+  .langbtn.active{background:var(--green); border-color:var(--green); color:#fff;}
+  .langbtn:hover:not(.active){border-color:var(--green); color:var(--green);}
+
+  /* HERO */
+  .eyebrow{font-weight:600; font-size:12.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--green); display:flex; align-items:center; gap:10px; margin-bottom:18px;}
+  .eyebrow::before{content:""; width:26px; height:1.5px; background:var(--gold);}
+  h1{font-family:'Fraunces', serif; font-weight:600; font-size:clamp(30px,5vw,48px); line-height:1.08; letter-spacing:-0.01em; max-width:700px;}
+  h1 em{font-style:italic; color:var(--green); font-weight:500;}
+  .subhead{margin-top:16px; font-size:16.5px; color:#3C4A44; max-width:640px;}
+  .hero-rule{height:1px; background:var(--line); margin:36px 0 44px;}
+
+  /* OVERVIEW FLOW DIAGRAM */
+  .flow{display:flex; align-items:flex-start; justify-content:space-between; gap:6px; margin-bottom:56px;}
+  .flow-step{display:flex; flex-direction:column; align-items:center; text-align:center; flex:1; min-width:0;}
+  .flow-icon{
+    width:58px; height:58px; border-radius:50%; background:var(--white); border:2px solid var(--green);
+    display:flex; align-items:center; justify-content:center; color:var(--green); flex-shrink:0;
+  }
+  .flow-icon svg{width:26px; height:26px;}
+  .flow-num{
+    font-family:'Fraunces',serif; font-weight:700; font-size:11px; color:var(--white); background:var(--gold);
+    width:19px; height:19px; border-radius:50%; display:flex; align-items:center; justify-content:center;
+    margin-top:-14px; margin-inline-start:36px; border:2px solid var(--paper);
+  }
+  .flow-label{font-size:12.5px; font-weight:600; margin-top:10px; max-width:110px; line-height:1.35;}
+  .flow-arrow{flex-shrink:0; color:var(--line); margin-top:18px; width:34px;}
+  .flow-arrow svg{width:100%; height:14px; display:block;}
+  @media (max-width:680px){
+    .flow{flex-direction:column; align-items:flex-start; gap:0;}
+    .flow-step{flex-direction:row; text-align:left; width:100%; gap:16px; padding:10px 0;}
+    .flow-label{max-width:none; margin-top:0; display:flex; align-items:center;}
+    .flow-arrow{display:none;}
+    .flow-num{margin-top:-10px; margin-inline-start:-8px;}
+  }
+
+  /* STEP CARDS */
+  .path-sub{font-size:14.5px; color:#5A665F; margin-bottom:26px;}
+  .step-icon-wrap{
+    width:44px; height:44px; border-radius:10px; background:var(--green-soft); color:var(--green);
+    display:flex; align-items:center; justify-content:center; margin-bottom:14px;
+  }
+  .step-icon-wrap svg{width:22px; height:22px;}
+  .step-card{background:var(--white); border:1px solid var(--line); border-radius:2px; padding:20px 22px; height:100%; position:relative;}
+  .step-tag{
+    position:absolute; top:16px; inset-inline-end:18px; font-family:'Fraunces',serif; font-weight:700; font-size:13px; color:var(--gold);
+  }
+  .step-card h4{font-size:15px; font-weight:700; margin-bottom:6px;}
+  .step-card p{font-size:14px; color:#48544E;}
+  .step-card p.docs{margin-top:10px; font-size:12.5px; color:#6B776F;}
+  .step-card p.docs b{color:#3C4A44;}
+  .steps-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:22px;}
+  @media (max-width:760px){ .steps-grid{grid-template-columns:1fr;} }
+
+  /* CONVERGE / ETF */
+  .converge{background:var(--gold-soft); border:1px solid #EBDBB2; border-radius:4px; padding:36px 32px; margin:56px 0; }
+  .path-tag{font-family:'Fraunces',serif; font-weight:600; font-size:13px; letter-spacing:.04em; color:var(--ink); padding:5px 14px; border-radius:20px; background:var(--gold); display:inline-block;}
+  .converge-title{font-family:'Fraunces',serif; font-size:24px; font-weight:600; margin:14px 0 8px;}
+  .converge p{font-size:15px; color:#3C4A44; max-width:680px;}
+  .etf-visual{margin-top:26px; display:flex; gap:14px; flex-wrap:wrap; align-items:center;}
+  .basket-note{font-size:13px; color:#6B5A2E; margin-top:16px; font-style:italic;}
+  .callout{background:var(--white); border:1px solid var(--line); border-left:4px solid var(--green); padding:20px 24px; margin-top:20px; font-size:14px; color:#3C4A44;}
+  .callout b{color:var(--ink);}
+
+  /* RESOURCES */
+  .resources{margin-top:60px;}
+  .resources-title{font-family:'Fraunces',serif; font-size:22px; font-weight:600; margin-bottom:6px;}
+  .resources-sub{font-size:13.5px; color:#6B776F; margin-bottom:24px;}
+  .res-grid{display:grid; grid-template-columns:1fr 1fr; gap:14px 28px;}
+  @media (max-width:700px){ .res-grid{grid-template-columns:1fr;} }
+  .res-col-title{font-weight:700; font-size:11.5px; letter-spacing:.08em; text-transform:uppercase; color:var(--green); margin:22px 0 10px;}
+  .res-col-title:first-child{margin-top:0;}
+  .res-link{display:flex; justify-content:space-between; align-items:baseline; gap:10px; padding:11px 0; border-bottom:1px solid var(--line); font-size:14px;}
+  .res-link a{color:var(--ink); text-decoration:none; font-weight:600;}
+  .res-link a:hover{color:var(--green);}
+  .res-link span{font-size:12px; color:#8A948C; white-space:nowrap;}
+
+  footer{margin-top:70px; padding-top:26px; border-top:1px solid var(--line); font-size:12.5px; color:#7C877F; display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;}
+  .brand{font-family:'Fraunces',serif; font-weight:600; color:var(--green); font-size:14px;}
+
+  /* URDU MODE */
+  #content-ur{display:none; direction:rtl; font-family:'Noto Nastaliq Urdu',serif; line-height:2.05;}
+  #content-ur h1{line-height:1.9;}
+  #content-ur .eyebrow{flex-direction:row-reverse;}
+  #content-ur .eyebrow::before{order:1;}
+  #content-ur .subhead{font-size:18px;}
+  #content-ur .flow-label{font-size:14px; max-width:120px;}
+  #content-ur .flow-num{margin-inline-start:0; margin-inline-end:36px;}
+  #content-ur .step-card h4{font-size:18px;}
+  #content-ur .step-card p{font-size:16px;}
+  #content-ur .step-card p.docs{font-size:14.5px;}
+  #content-ur .step-tag{font-family:'Inter',sans-serif;}
+  #content-ur .converge-title{font-size:26px;}
+  #content-ur .converge p{font-size:16px;}
+  #content-ur .basket-note{font-size:14.5px; font-style:normal;}
+  #content-ur .callout{border-left:none; border-right:4px solid var(--green); font-size:15.5px;}
+  #content-ur .resources-title{font-size:24px;}
+  #content-ur .resources-sub{font-size:15px;}
+  #content-ur .res-col-title{font-family:'Inter',sans-serif;}
+  #content-ur .res-link{font-size:15px;}
+  #content-ur .res-link a{font-weight:700;}
+  #content-ur .res-link span{font-family:'Inter',sans-serif;}
+  #content-ur footer{font-size:14px;}
+  #content-ur .brand{font-family:'Inter',sans-serif;}
+  #content-ur .flow-arrow svg{transform:scaleX(-1);}
+
+  @media (max-width:600px){ .wrap{padding:16px 18px 60px;} .converge{padding:26px 20px;} }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="langbar">
+    <button class="langbtn active" id="btn-en" onclick="setLang('en')">English</button>
+    <button class="langbtn" id="btn-ur" onclick="setLang('ur')">اردو</button>
+  </div>
+
+  <!-- ============ ENGLISH ============ -->
+  <div id="content-en">
+
+    <div class="eyebrow">InvesMatter · Getting Started Guide</div>
+    <h1>Your <em>PSX</em> investment journey — <br>for residents of Pakistan.</h1>
+    <p class="subhead">A straightforward route onto the Pakistan Stock Exchange if you live in Pakistan — explained without the jargon. The whole process usually takes 2–5 working days.</p>
+
+    <div class="hero-rule"></div>
+
+    <!-- OVERVIEW FLOW -->
+    <div class="flow">
+      <div class="flow-step">
+        <div class="flow-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M3 12h18"/></svg></div>
+        <div class="flow-num">1</div>
+        <div class="flow-label">Choose a broker</div>
+      </div>
+      <div class="flow-arrow"><svg viewBox="0 0 34 14"><line x1="0" y1="7" x2="30" y2="7" stroke="currentColor" stroke-width="1.5" stroke-dasharray="2 4"/><path d="M25 2l6 5-6 5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></div>
+      <div class="flow-step">
+        <div class="flow-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8 9h8M8 13h5M8 17h3"/></svg></div>
+        <div class="flow-num">2</div>
+        <div class="flow-label">Open your accounts</div>
+      </div>
+      <div class="flow-arrow"><svg viewBox="0 0 34 14"><line x1="0" y1="7" x2="30" y2="7" stroke="currentColor" stroke-width="1.5" stroke-dasharray="2 4"/><path d="M25 2l6 5-6 5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></div>
+      <div class="flow-step">
+        <div class="flow-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10l9-6 9 6"/><path d="M5 10v9M9 10v9M15 10v9M19 10v9"/><path d="M3 19h18"/></svg></div>
+        <div class="flow-num">3</div>
+        <div class="flow-label">Add funds</div>
+      </div>
+      <div class="flow-arrow"><svg viewBox="0 0 34 14"><line x1="0" y1="7" x2="30" y2="7" stroke="currentColor" stroke-width="1.5" stroke-dasharray="2 4"/><path d="M25 2l6 5-6 5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></div>
+      <div class="flow-step">
+        <div class="flow-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h16l-1.5 10a2 2 0 0 1-2 1.7H7.5a2 2 0 0 1-2-1.7L4 9Z"/><path d="M8 9V6a4 4 0 0 1 8 0v3"/></svg></div>
+        <div class="flow-num">4</div>
+        <div class="flow-label">Buy your first ETF</div>
+      </div>
+    </div>
+
+    <div class="steps-grid">
+      <div>
+        <div class="step-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M3 12h18"/></svg></div>
+        <div class="step-card">
+          <span class="step-tag">01</span>
+          <h4>Choose a broker</h4>
+          <p>Pick a stockbroker licensed by PSX and registered with the SECP (called a TREC holder). Compare fees and how easy their app is to use.</p>
+        </div>
+      </div>
+      <div>
+        <div class="step-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8 9h8M8 13h5M8 17h3"/></svg></div>
+        <div class="step-card">
+          <span class="step-tag">02</span>
+          <h4>Open your accounts</h4>
+          <p>Fill in the broker's account-opening form. This automatically opens two things for you: a <b>Brokerage Account</b> (for trading) and a <b>CDC Sub-Account</b> (where your shares are safely held electronically).</p>
+          <p class="docs"><b>You'll need:</b> CNIC copy, a bank account in your own name, and basic contact details. First-time or small investors can ask for a <b>"Sahulat" account</b> — a simplified starter account with no income proof required (subject to a maximum investment cap set by PSX — ask your broker for the current limit).</p>
+        </div>
+      </div>
+      <div>
+        <div class="step-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10l9-6 9 6"/><path d="M5 10v9M9 10v9M15 10v9M19 10v9"/><path d="M3 19h18"/></svg></div>
+        <div class="step-card">
+          <span class="step-tag">03</span>
+          <h4>Add money & you're in</h4>
+          <p>Transfer funds from your bank account into your new trading account. Once it reflects, you're ready to buy your first shares.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="converge">
+      <span class="path-tag">Step 4</span>
+      <div class="converge-title">Buy your first investment — start with an ETF</div>
+      <p>Once your account is funded, you can buy shares in any of PSX's 500+ listed companies. But picking individual companies takes research. For a first investment, most beginners start with an <b>ETF (Exchange-Traded Fund)</b> instead — it's simpler and needs far less homework.</p>
+
+      <div class="etf-visual">
+        <svg width="220" height="70" viewBox="0 0 220 70" xmlns="http://www.w3.org/2000/svg">
+          <rect x="0" y="0" width="220" height="70" rx="6" fill="#FFFFFF" stroke="#EBDBB2"/>
+          <rect x="14" y="14" width="34" height="34" rx="6" fill="#0B4F3C"/>
+          <rect x="54" y="14" width="34" height="34" rx="6" fill="#2C5F7C"/>
+          <rect x="94" y="14" width="34" height="34" rx="6" fill="#C99A3D"/>
+          <rect x="134" y="14" width="34" height="34" rx="6" fill="#7C877F"/>
+          <text x="110" y="60" text-anchor="middle" font-family="Inter" font-size="10.5" fill="#6B5A2E">one basket of many companies</text>
+        </svg>
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 12h14M13 6l6 6-6 6" stroke="#6B5A2E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <svg width="150" height="70" viewBox="0 0 150 70" xmlns="http://www.w3.org/2000/svg">
+          <rect x="0" y="0" width="150" height="70" rx="6" fill="#FFFFFF" stroke="#EBDBB2"/>
+          <rect x="18" y="16" width="114" height="30" rx="6" fill="#0E2A22"/>
+          <text x="75" y="35" text-anchor="middle" font-family="Fraunces" font-weight="600" font-size="13" fill="#FFFFFF">1 ETF unit</text>
+          <text x="75" y="60" text-anchor="middle" font-family="Inter" font-size="10.5" fill="#6B5A2E">bought like a normal share</text>
+        </svg>
+      </div>
+      <p class="basket-note">Example: instead of researching and buying shares in ten different banks or fertilizer companies one by one, a single ETF unit can give you a small slice of all of them at once — bought and sold on PSX just like a regular stock.</p>
+
+      <div class="callout">
+        <b>Good to know:</b> There's no minimum set by CDC to open an account — many brokers let you start with a modest amount. Shares typically appear in your CDC account the next working day (T+1) after your trade settles — PSX moved from the older T+2 cycle to T+1 in February 2026. Some ETFs are also Shariah-compliant, for investors who want a halal-screened option. Always confirm current fees, minimums, and tax rules with your broker, as these can change.
+      </div>
+    </div>
+
+    <div class="resources">
+      <div class="resources-title">Official sources & where to go next</div>
+      <div class="resources-sub">Every link below goes directly to PSX — verify anything time-sensitive (fees, minimums, forms) here before acting on it.</div>
+
+      <div class="res-grid">
+        <div>
+          <div class="res-col-title">Finding & choosing a broker</div>
+          <div class="res-link"><a href="https://www.psx.com.pk/psx/resources-and-tools/investors/top-10-brokers" target="_blank" rel="noopener">Top 10 Brokers (PSX rankings)</a><span>psx.com.pk</span></div>
+          <div class="res-link"><a href="https://www.psx.com.pk/psx/themes/psx/uploads/List_of_Brokerage_Firms-new.pdf" target="_blank" rel="noopener">Full list of brokers & contact details</a><span>PDF</span></div>
+          <div class="res-link"><a href="https://www.psx.com.pk/psx/themes/psx/uploads/Online-Account-Holder-19-9-2024.pdf" target="_blank" rel="noopener">Brokers offering online account opening</a><span>PDF</span></div>
+          <div class="res-link"><a href="https://www.psx.com.pk/psx/resources-and-tools/TREC-Holders" target="_blank" rel="noopener">Find a Brokerage Firm (TREC holder search)</a><span>psx.com.pk</span></div>
+
+          <div class="res-col-title">Getting started</div>
+          <div class="res-link"><a href="https://www.psx.com.pk/psx/resources-and-tools/investors/guide-to-investors" target="_blank" rel="noopener">Guide to (new) Investors</a><span>psx.com.pk</span></div>
+          <div class="res-link"><a href="https://www.psx.com.pk/psx/resources-and-tools/investors/account-opening-checklist" target="_blank" rel="noopener">Account Opening Checklist</a><span>psx.com.pk</span></div>
+          <div class="res-link"><a href="https://www.psx.com.pk/psx/resources-and-tools/investors/sahulat-account" target="_blank" rel="noopener">Sahulat Account (starter account, no income proof)</a><span>psx.com.pk</span></div>
+          <div class="res-link"><a href="https://www.psx.com.pk/psx/online-accounts-opening" target="_blank" rel="noopener">Online Account Opening</a><span>psx.com.pk</span></div>
+        </div>
+
+        <div>
+          <div class="res-col-title">ETFs & Shariah-compliant investing</div>
+          <div class="res-link"><a href="https://www.psx.com.pk/psx/product-and-services/products/exchange-traded-funds-etfs" target="_blank" rel="noopener">Exchange Traded Funds (ETFs) on PSX</a><span>psx.com.pk</span></div>
+          <div class="res-link"><a href="https://www.psx.com.pk/psx/resources-and-tools/shariah-compliant-investment" target="_blank" rel="noopener">Shariah Compliant Investment</a><span>psx.com.pk</span></div>
+
+          <div class="res-col-title">Track the market & your portfolio</div>
+          <div class="res-link"><a href="https://dps.psx.com.pk/" target="_blank" rel="noopener">PSX Data Portal (live prices, downloads)</a><span>dps.psx.com.pk</span></div>
+          <div class="res-link"><a href="https://dps.psx.com.pk/portfolio/login" target="_blank" rel="noopener">My Portfolio (virtual, practice mode)</a><span>psx.com.pk</span></div>
+          <div class="res-link"><a href="https://www.psx.com.pk/psx/resources-and-tools/investors/investors-complaints" target="_blank" rel="noopener">Investor Complaints</a><span>psx.com.pk</span></div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <span class="brand">InvesMatter</span>
+      <span>Educational guide only — not investment advice. Please verify current rules with your broker or the PSX/SECP before investing.</span>
+    </footer>
+
+  </div>
+
+  <!-- ============ URDU ============ -->
+  <div id="content-ur">
+
+    <div class="eyebrow">انویسٹ میٹر · رہنمائی کا آغاز</div>
+    <h1>آپ کا <em>PSX</em> سرمایہ کاری کا سفر — پاکستان میں مقیم افراد کے لیے۔</h1>
+    <p class="subhead">اگر آپ پاکستان میں مقیم ہیں تو پاکستان اسٹاک ایکسچینج میں سرمایہ کاری کا سیدھا اور آسان راستہ — بغیر مشکل اصطلاحات کے۔ پورا عمل عام طور پر 2 سے 5 کاروباری دنوں میں مکمل ہو جاتا ہے۔</p>
+
+    <div class="hero-rule"></div>
+
+    <!-- OVERVIEW FLOW -->
+    <div class="flow">
+      <div class="flow-step">
+        <div class="flow-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M3 12h18"/></svg></div>
+        <div class="flow-num">1</div>
+        <div class="flow-label">بروکر منتخب کریں</div>
+      </div>
+      <div class="flow-arrow"><svg viewBox="0 0 34 14"><line x1="0" y1="7" x2="30" y2="7" stroke="currentColor" stroke-width="1.5" stroke-dasharray="2 4"/><path d="M25 2l6 5-6 5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></div>
+      <div class="flow-step">
+        <div class="flow-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8 9h8M8 13h5M8 17h3"/></svg></div>
+        <div class="flow-num">2</div>
+        <div class="flow-label">اکاؤنٹس کھولیں</div>
+      </div>
+      <div class="flow-arrow"><svg viewBox="0 0 34 14"><line x1="0" y1="7" x2="30" y2="7" stroke="currentColor" stroke-width="1.5" stroke-dasharray="2 4"/><path d="M25 2l6 5-6 5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></div>
+      <div class="flow-step">
+        <div class="flow-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10l9-6 9 6"/><path d="M5 10v9M9 10v9M15 10v9M19 10v9"/><path d="M3 19h18"/></svg></div>
+        <div class="flow-num">3</div>
+        <div class="flow-label">رقم جمع کروائیں</div>
+      </div>
+      <div class="flow-arrow"><svg viewBox="0 0 34 14"><line x1="0" y1="7" x2="30" y2="7" stroke="currentColor" stroke-width="1.5" stroke-dasharray="2 4"/><path d="M25 2l6 5-6 5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></div>
+      <div class="flow-step">
+        <div class="flow-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h16l-1.5 10a2 2 0 0 1-2 1.7H7.5a2 2 0 0 1-2-1.7L4 9Z"/><path d="M8 9V6a4 4 0 0 1 8 0v3"/></svg></div>
+        <div class="flow-num">4</div>
+        <div class="flow-label">پہلا ETF خریدیں</div>
+      </div>
+    </div>
+
+    <div class="steps-grid">
+      <div>
+        <div class="step-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M3 12h18"/></svg></div>
+        <div class="step-card">
+          <span class="step-tag">01</span>
+          <h4>بروکر منتخب کریں</h4>
+          <p>ایسا اسٹاک بروکر منتخب کریں جو PSX سے لائسنس یافتہ اور SECP کے ساتھ رجسٹرڈ ہو (اسے TREC ہولڈر کہا جاتا ہے)۔ فیس کا موازنہ کریں اور دیکھیں کہ ان کی ایپ استعمال میں کتنی آسان ہے۔</p>
+        </div>
+      </div>
+      <div>
+        <div class="step-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8 9h8M8 13h5M8 17h3"/></svg></div>
+        <div class="step-card">
+          <span class="step-tag">02</span>
+          <h4>اپنے اکاؤنٹس کھولیں</h4>
+          <p>بروکر کا اکاؤنٹ اوپننگ فارم پُر کریں۔ اس سے خودکار طور پر دو چیزیں کھل جاتی ہیں: ایک <b>بروکریج اکاؤنٹ</b> (ٹریڈنگ کے لیے) اور ایک <b>CDC سب اکاؤنٹ</b> (جہاں آپ کے شیئرز محفوظ طریقے سے الیکٹرانک صورت میں رکھے جاتے ہیں)۔</p>
+          <p class="docs"><b>ضرورت ہوگی:</b> CNIC کی کاپی، اپنے نام پر بینک اکاؤنٹ، اور بنیادی رابطہ کی تفصیلات۔ نئے یا چھوٹے سرمایہ کار <b>"سہولت اکاؤنٹ"</b> کی سہولت بھی حاصل کر سکتے ہیں — ایک آسان اسٹارٹر اکاؤنٹ جس کے لیے آمدنی کا ثبوت درکار نہیں (البتہ PSX کی جانب سے سرمایہ کاری کی ایک زیادہ سے زیادہ حد مقرر ہے — موجودہ حد کے لیے اپنے بروکر سے پوچھیں)۔</p>
+        </div>
+      </div>
+      <div>
+        <div class="step-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10l9-6 9 6"/><path d="M5 10v9M9 10v9M15 10v9M19 10v9"/><path d="M3 19h18"/></svg></div>
+        <div class="step-card">
+          <span class="step-tag">03</span>
+          <h4>رقم جمع کروائیں اور شروع کریں</h4>
+          <p>اپنے بینک اکاؤنٹ سے اپنے نئے ٹریڈنگ اکاؤنٹ میں رقم منتقل کریں۔ رقم موصول ہوتے ہی آپ اپنے پہلے شیئرز خریدنے کے لیے تیار ہیں۔</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="converge">
+      <span class="path-tag">مرحلہ 4</span>
+      <div class="converge-title">اپنی پہلی سرمایہ کاری کریں — ETF سے آغاز کریں</div>
+      <p>اکاؤنٹ میں رقم آنے کے بعد آپ PSX کی 500 سے زائد لسٹڈ کمپنیوں میں سے کسی میں بھی شیئرز خرید سکتے ہیں۔ لیکن انفرادی کمپنیوں کا انتخاب کافی تحقیق چاہتا ہے۔ پہلی سرمایہ کاری کے لیے، زیادہ تر نئے سرمایہ کار <b>ETF (ایکسچینج ٹریڈڈ فنڈ)</b> سے آغاز کرتے ہیں — یہ آسان ہے اور کم تحقیق درکار ہوتی ہے۔</p>
+
+      <div class="etf-visual">
+        <svg width="220" height="70" viewBox="0 0 220 70" xmlns="http://www.w3.org/2000/svg">
+          <rect x="0" y="0" width="220" height="70" rx="6" fill="#FFFFFF" stroke="#EBDBB2"/>
+          <rect x="14" y="14" width="34" height="34" rx="6" fill="#0B4F3C"/>
+          <rect x="54" y="14" width="34" height="34" rx="6" fill="#2C5F7C"/>
+          <rect x="94" y="14" width="34" height="34" rx="6" fill="#C99A3D"/>
+          <rect x="134" y="14" width="34" height="34" rx="6" fill="#7C877F"/>
+          <text x="110" y="60" text-anchor="middle" font-family="Inter" font-size="10.5" fill="#6B5A2E">کئی کمپنیوں کی ایک ٹوکری</text>
+        </svg>
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M19 12H5M11 6l-6 6 6 6" stroke="#6B5A2E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <svg width="150" height="70" viewBox="0 0 150 70" xmlns="http://www.w3.org/2000/svg">
+          <rect x="0" y="0" width="150" height="70" rx="6" fill="#FFFFFF" stroke="#EBDBB2"/>
+          <rect x="18" y="16" width="114" height="30" rx="6" fill="#0E2A22"/>
+          <text x="75" y="35" text-anchor="middle" font-family="Inter" font-weight="600" font-size="13" fill="#FFFFFF">1 ETF یونٹ</text>
+          <text x="75" y="60" text-anchor="middle" font-family="Inter" font-size="10.5" fill="#6B5A2E">عام شیئر کی طرح خریدا جاتا ہے</text>
+        </svg>
+      </div>
+      <p class="basket-note">مثال کے طور پر: دس مختلف بینکوں یا کھاد بنانے والی کمپنیوں میں الگ الگ تحقیق کر کے شیئرز خریدنے کے بجائے، ایک ہی ETF یونٹ آپ کو ان سب میں ایک ساتھ تھوڑا سا حصہ دے سکتا ہے — اور یہ PSX پر عام شیئر کی طرح خریدا اور بیچا جاتا ہے۔</p>
+
+      <div class="callout">
+        <b>جاننے کی بات:</b> CDC کی جانب سے اکاؤنٹ کھولنے کے لیے کوئی کم از کم رقم مقرر نہیں — بیشتر بروکرز آپ کو معمولی رقم سے شروعات کرنے دیتے ہیں۔ عام طور پر ٹرانزیکشن مکمل ہونے کے اگلے کاروباری دن (T+1) شیئرز آپ کے CDC اکاؤنٹ میں نظر آنے لگتے ہیں — فروری 2026 میں PSX پرانے T+2 نظام سے T+1 پر منتقل ہو چکا ہے۔ کچھ ETFs شرعی اعتبار سے بھی موزوں ہیں، ان سرمایہ کاروں کے لیے جو حلال آپشن چاہتے ہیں۔ فیس، کم از کم رقم اور ٹیکس کے قوانین وقت کے ساتھ تبدیل ہو سکتے ہیں، اس لیے ہمیشہ اپنے بروکر سے تازہ ترین معلومات کی تصدیق کریں۔
+      </div>
+    </div>
+
+    <div class="resources">
+      <div class="resources-title">اہم ذرائع اور آگے کیا کریں</div>
+      <div class="resources-sub">نیچے دیے گئے تمام لنکس براہ راست PSX کی ویب سائٹ پر جاتے ہیں — کوئی بھی اہم فیصلہ کرنے سے پہلے یہاں تصدیق کر لیں۔</div>
+
+      <div class="res-grid">
+        <div>
+          <div class="res-col-title">بروکر تلاش کریں</div>
+          <div class="res-link"><a href="https://www.psx.com.pk/psx/resources-and-tools/investors/top-10-brokers" target="_blank" rel="noopener">ٹاپ 10 بروکرز (PSX رینکنگ)</a><span>psx.com.pk</span></div>
+          <div class="res-link"><a href="https://www.psx.com.pk/psx/themes/psx/uploads/List_of_Brokerage_Firms-new.pdf" target="_blank" rel="noopener">بروکرز اور رابطہ تفصیلات کی مکمل فہرست</a><span>PDF</span></div>
+          <div class="res-link"><a href="https://www.psx.com.pk/psx/themes/psx/uploads/Online-Account-Holder-19-9-2024.pdf" target="_blank" rel="noopener">آن لائن اکاؤنٹ کھولنے والے بروکرز</a><span>PDF</span></div>
+          <div class="res-link"><a href="https://www.psx.com.pk/psx/resources-and-tools/TREC-Holders" target="_blank" rel="noopener">بروکریج فرم تلاش کریں (TREC ہولڈر)</a><span>psx.com.pk</span></div>
+
+          <div class="res-col-title">آغاز کے لیے رہنمائی</div>
+          <div class="res-link"><a href="https://www.psx.com.pk/psx/resources-and-tools/investors/guide-to-investors" target="_blank" rel="noopener">نئے سرمایہ کاروں کے لیے رہنمائی</a><span>psx.com.pk</span></div>
+          <div class="res-link"><a href="https://www.psx.com.pk/psx/resources-and-tools/investors/account-opening-checklist" target="_blank" rel="noopener">اکاؤنٹ اوپننگ چیک لسٹ</a><span>psx.com.pk</span></div>
+          <div class="res-link"><a href="https://www.psx.com.pk/psx/resources-and-tools/investors/sahulat-account" target="_blank" rel="noopener">سہولت اکاؤنٹ (بغیر آمدنی ثبوت)</a><span>psx.com.pk</span></div>
+          <div class="res-link"><a href="https://www.psx.com.pk/psx/online-accounts-opening" target="_blank" rel="noopener">آن لائن اکاؤنٹ اوپننگ</a><span>psx.com.pk</span></div>
+        </div>
+
+        <div>
+          <div class="res-col-title">ETF اور شرعی سرمایہ کاری</div>
+          <div class="res-link"><a href="https://www.psx.com.pk/psx/product-and-services/products/exchange-traded-funds-etfs" target="_blank" rel="noopener">PSX پر ایکسچینج ٹریڈڈ فنڈز (ETFs)</a><span>psx.com.pk</span></div>
+          <div class="res-link"><a href="https://www.psx.com.pk/psx/resources-and-tools/shariah-compliant-investment" target="_blank" rel="noopener">شرعی اعتبار سے موزوں سرمایہ کاری</a><span>psx.com.pk</span></div>
+
+          <div class="res-col-title">مارکیٹ اور پورٹ فولیو ٹریک کریں</div>
+          <div class="res-link"><a href="https://dps.psx.com.pk/" target="_blank" rel="noopener">PSX ڈیٹا پورٹل (لائیو قیمتیں)</a><span>dps.psx.com.pk</span></div>
+          <div class="res-link"><a href="https://dps.psx.com.pk/portfolio/login" target="_blank" rel="noopener">میرا پورٹ فولیو (ورچوئل، مشق کے لیے)</a><span>psx.com.pk</span></div>
+          <div class="res-link"><a href="https://www.psx.com.pk/psx/resources-and-tools/investors/investors-complaints" target="_blank" rel="noopener">سرمایہ کار شکایات</a><span>psx.com.pk</span></div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <span class="brand">InvesMatter</span>
+      <span>صرف تعلیمی معلومات کے لیے — یہ سرمایہ کاری کا باضابطہ مشورہ نہیں۔ سرمایہ کاری سے پہلے براہ کرم اپنے بروکر یا PSX/SECP سے تازہ ترین قوانین کی تصدیق کریں۔</span>
+    </footer>
+
+  </div>
+
+</div>
+
+<script>
+function setLang(lang){
+  document.getElementById('content-en').style.display = (lang==='en') ? '' : 'none';
+  document.getElementById('content-ur').style.display = (lang==='ur') ? '' : 'none';
+  document.getElementById('btn-en').classList.toggle('active', lang==='en');
+  document.getElementById('btn-ur').classList.toggle('active', lang==='ur');
+  window.scrollTo(0,0);
+}
+</script>
+</body>
+</html>
