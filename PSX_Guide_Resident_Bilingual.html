@@ -408,8 +408,8 @@
 
 <script>
 function setLang(lang){
-  document.getElementById('content-en').style.display = (lang==='en') ? '' : 'none';
-  document.getElementById('content-ur').style.display = (lang==='ur') ? '' : 'none';
+  document.getElementById('content-en').style.display = (lang==='en') ? 'block' : 'none';
+  document.getElementById('content-ur').style.display = (lang==='ur') ? 'block' : 'none';
   document.getElementById('btn-en').classList.toggle('active', lang==='en');
   document.getElementById('btn-ur').classList.toggle('active', lang==='ur');
   window.scrollTo(0,0);
